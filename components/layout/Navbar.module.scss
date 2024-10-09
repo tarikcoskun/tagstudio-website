@@ -1,0 +1,93 @@
+@import "@/styles/media";
+
+.container {
+  position: relative;
+  z-index: 50;
+  top: 0;
+  width: 100%;
+  height: var(--content-nav-height);
+
+  .navbar {
+    display: flex;
+    width: 100%;
+    max-width: var(--content-width);
+    height: 100%;
+    align-items: center;
+    gap: 1rem;
+    margin-inline: auto;
+
+    .logo {
+      z-index: 3;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+
+      span {
+        color: var(--theme-text-title);
+        font-weight: 500;
+      }
+    }
+
+    .navigation {
+      margin-left: auto;
+
+      @include media("<md") {
+        position: absolute;
+        z-index: 2;
+        height: 100vh;
+        background-color: var(--theme-background);
+        inset: 0;
+        opacity: 0;
+        pointer-events: none;
+        transition: 200ms opacity;
+
+        &[data-state="open"] {
+          opacity: 1;
+          pointer-events: initial;
+        }
+      }
+
+      .links {
+        display: flex;
+        list-style: none;
+        @include media("<md") {
+          flex-direction: column;
+          margin-top: var(--content-nav-height);
+        }
+
+        li {
+          display: flex;
+
+          .link {
+            color: var(--theme-text-on-hero);
+            font-size: var(--font-size-sm);
+            padding-inline: 1rem;
+            @include media("<md") {
+              width: 100%;
+              height: 100%;
+              padding: var(--content-spacing);
+            }
+
+            &:hover {
+              color: var(--theme-text-title);
+            }
+          }
+        }
+      }
+    }
+
+    .download-button {
+      @include media("<md") {
+        display: none;
+      }
+    }
+
+    .mobile-menu-button {
+      z-index: 3;
+      margin-left: auto;
+      @include media(">md") {
+        display: none;
+      }
+    }
+  }
+}

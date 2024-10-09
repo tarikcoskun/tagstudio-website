@@ -1,0 +1,114 @@
+@use "colors";
+
+:root {
+  --theme-background: var(--color-gray-950);
+  --theme-surface: rgb(255 255 255 / 0.025);
+  --theme-outline: rgb(255 255 255 / 0.05);
+  --theme-text-title: var(--color-gray-50);
+  --theme-text-body: var(--color-gray-400);
+  --theme-text-sub: var(--color-gray-500);
+  --theme-text-on-hero: #b2bac9;
+  --theme-text-light-alpha: rgb(255 255 255 / 0.65);
+  --theme-text-dark-alpha: rgb(0 0 0 / 0.65);
+  --theme-select-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1em' height='1em' viewBox='0 0 256 256'%3E%3Cpath fill='%23171717' d='m213.66 101.66l-80 80a8 8 0 0 1-11.32 0l-80-80a8 8 0 0 1 11.32-11.32L128 164.69l74.34-74.35a8 8 0 0 1 11.32 11.32Z'/%3E%3C/svg%3E");
+
+  --font-size-base: 16px;
+  --font-size-6xl: 3.5rem;
+  --font-size-5xl: 3rem;
+  --font-size-4xl: 2.25rem;
+  --font-size-3xl: 1.875rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-xl: 1.25rem;
+  --font-size-lg: 1.125rem;
+  --font-size-sm: 0.875rem;
+  --font-size-paragraph: var(--font-size-lg);
+
+  --content-spacing: 24px;
+  --content-width: 1200px;
+  --content-nav-height: 80px;
+  --section-spacing: 36px;
+
+  --rounded-sm: 4px;
+  --rounded-base: 6px;
+  --rounded-md: 8px;
+  --rounded-lg: 10px;
+  --rounded-full: 100rem;
+
+  --color-gray-50: #{colors.$gray-50};
+  --color-gray-100: #{colors.$gray-100};
+  --color-gray-200: #{colors.$gray-200};
+  --color-gray-300: #{colors.$gray-300};
+  --color-gray-400: #{colors.$gray-400};
+  --color-gray-500: #{colors.$gray-500};
+  --color-gray-600: #{colors.$gray-600};
+  --color-gray-700: #{colors.$gray-700};
+  --color-gray-800: #{colors.$gray-800};
+  --color-gray-900: #{colors.$gray-900};
+  --color-gray-950: #{colors.$gray-950};
+
+  --color-teal-50: #{colors.$teal-50};
+  --color-teal-100: #{colors.$teal-100};
+  --color-teal-200: #{colors.$teal-200};
+  --color-teal-300: #{colors.$teal-300};
+  --color-teal-400: #{colors.$teal-400};
+  --color-teal-500: #{colors.$teal-500};
+  --color-teal-600: #{colors.$teal-600};
+  --color-teal-700: #{colors.$teal-700};
+  --color-teal-800: #{colors.$teal-800};
+  --color-teal-900: #{colors.$teal-900};
+  --color-teal-950: #{colors.$teal-950};
+
+  --color-cyan-50: #{colors.$cyan-50};
+  --color-cyan-100: #{colors.$cyan-100};
+  --color-cyan-200: #{colors.$cyan-200};
+  --color-cyan-300: #{colors.$cyan-300};
+  --color-cyan-400: #{colors.$cyan-400};
+  --color-cyan-500: #{colors.$cyan-500};
+  --color-cyan-600: #{colors.$cyan-600};
+  --color-cyan-700: #{colors.$cyan-700};
+  --color-cyan-800: #{colors.$cyan-800};
+  --color-cyan-900: #{colors.$cyan-900};
+  --color-cyan-950: #{colors.$cyan-950};
+
+  --color-blue-50: #{colors.$blue-50};
+  --color-blue-100: #{colors.$blue-100};
+  --color-blue-200: #{colors.$blue-200};
+  --color-blue-300: #{colors.$blue-300};
+  --color-blue-400: #{colors.$blue-400};
+  --color-blue-500: #{colors.$blue-500};
+  --color-blue-600: #{colors.$blue-600};
+  --color-blue-700: #{colors.$blue-700};
+  --color-blue-800: #{colors.$blue-800};
+  --color-blue-900: #{colors.$blue-900};
+  --color-blue-950: #{colors.$blue-950};
+
+  --color-indigo-50: #{colors.$indigo-50};
+  --color-indigo-100: #{colors.$indigo-100};
+  --color-indigo-200: #{colors.$indigo-200};
+  --color-indigo-300: #{colors.$indigo-300};
+  --color-indigo-400: #{colors.$indigo-400};
+  --color-indigo-500: #{colors.$indigo-500};
+  --color-indigo-600: #{colors.$indigo-600};
+  --color-indigo-700: #{colors.$indigo-700};
+  --color-indigo-800: #{colors.$indigo-800};
+  --color-indigo-900: #{colors.$indigo-900};
+  --color-indigo-950: #{colors.$indigo-950};
+
+  --color-purple-50: #{colors.$purple-50};
+  --color-purple-100: #{colors.$purple-100};
+  --color-purple-200: #{colors.$purple-200};
+  --color-purple-300: #{colors.$purple-300};
+  --color-purple-400: #{colors.$purple-400};
+  --color-purple-500: #{colors.$purple-500};
+  --color-purple-600: #{colors.$purple-600};
+  --color-purple-700: #{colors.$purple-700};
+  --color-purple-800: #{colors.$purple-800};
+  --color-purple-900: #{colors.$purple-900};
+  --color-purple-950: #{colors.$purple-950};
+
+  @include media("<lg") {
+    --content-spacing: 18px;
+    --section-spacing: 24px;
+    --content-nav-height: 56px;
+  }
+}

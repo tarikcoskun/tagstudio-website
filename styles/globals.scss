@@ -1,0 +1,26 @@
+@import "media";
+@import "default";
+
+.pageLayout {
+  display: grid;
+  min-height: calc(100vh - var(--content-nav-height));
+  align-content: start;
+  grid-template-columns:
+    [start]
+    1fr
+    [content-start] min(var(--content-width), 100%) [content-end]
+    1fr
+    [end];
+  @include media("<md") {
+    padding-bottom: var(--content-mobile-nav-height);
+  }
+
+  > * {
+    grid-column: content-start / content-end;
+    @include media("<desktop") { padding-inline: var(--content-spacing); }
+  }
+}
+
+.contentPadding {
+  @include media("<desktop") { padding-inline: var(--content-spacing); }
+}

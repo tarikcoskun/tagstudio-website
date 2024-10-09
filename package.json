@@ -1,0 +1,33 @@
+{
+  "name": "tagstudio-website",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "pnpm@9.0.6+sha1.648f6014eb363abb36618f2ba59282a9eeb3e879",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "dependencies": {
+    "classnames": "^2.5.1",
+    "next": "14.2.14",
+    "react": "^18",
+    "react-dom": "^18"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^3.7.3",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^8.57.1",
+    "postcss": "^8.4.47",
+    "postcss-scss": "^4.0.9",
+    "sass": "^1.79.4",
+    "stylelint": "^16.9.0",
+    "stylelint-config-idiomatic-order": "^10.0.0",
+    "typescript": "^5"
+  }
+}

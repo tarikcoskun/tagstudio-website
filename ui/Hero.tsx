@@ -1,3 +1,5 @@
+"use client";
+
 // Components
 import { Button } from "@/components/Button";
 import { DownloadButton } from "./DownloadButton";

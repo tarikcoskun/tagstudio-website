@@ -1,5 +1,3 @@
-"use client";
-
 import { getOs } from "@/util/getOs";
 import { downloads } from "@/config/links";
 

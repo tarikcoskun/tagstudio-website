@@ -1,28 +1,25 @@
 "use client";
 
 import React from "react";
-import { getOs } from "@/util/getOs";
+import dynamic from "next/dynamic";
 
 // Data
-import { downloads } from "@/config/links";
 import { navbarLinks } from "@/config/layout";
 
 // Components
 import Link from "next/link";
-import { Button } from "../Button";
+import { Icon } from "../Icon";
 
 // Styles
 import style from "./Navbar.module.scss";
 import classNames from "classnames/bind";
-import { Icon } from "../Icon";
 
 const cx = classNames.bind(style);
 
+const DownloadButton = dynamic(() => import("./DownloadButton"), { ssr: false });
+
 export function Navbar() {
   const [mobileMenu, setMobileMenu] = React.useState(false);
-
-  const os = getOs();
-  const OsIcon = downloads[os].icon;
 
   React.useEffect(() => {
     if (mobileMenu) document.body.style.overflow = "hidden";
@@ -67,15 +64,7 @@ export function Navbar() {
           </ul>
         </nav>
 
-        <Button
-          as="a"
-          href={downloads[os].link}
-          color="surface"
-          className={cx("download-button")}
-          leading={OsIcon}
-        >
-          Download
-        </Button>
+        <DownloadButton />
 
         <button
           type="button"

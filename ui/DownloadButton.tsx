@@ -1,3 +1,5 @@
+"use client";
+
 import { getOs } from "@/util/getOs";
 import { downloads } from "@/config/links";
 
@@ -6,7 +8,7 @@ import { Icon } from "@/components/Icon";
 import { Button } from "@/components/Button";
 import { Dropdown } from "@/components/Dropdown";
 
-export function DownloadButton() {
+export default function DownloadButton() {
   const os = getOs();
   const OsIcon = downloads[os].icon;
 

@@ -76,12 +76,6 @@
       }
     }
 
-    .download-button {
-      @include media("<md") {
-        display: none;
-      }
-    }
-
     .mobile-menu-button {
       z-index: 3;
       margin-left: auto;

@@ -1,0 +1,7 @@
+@import "@/styles/media";
+
+.download-button {
+  @include media("<md") {
+    display: none;
+  }
+}

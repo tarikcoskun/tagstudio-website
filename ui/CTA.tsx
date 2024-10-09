@@ -1,11 +1,14 @@
-// Components
-import { DownloadButton } from "./DownloadButton";
+"use client";
+
+import dynamic from "next/dynamic";
 
 // Styles
 import style from "./CTA.module.scss";
 import classNames from "classnames/bind";
 
 const cx = classNames.bind(style);
+
+const DownloadButton = dynamic(() => import("./DownloadButton"), { ssr: false });
 
 export function CTA() {
   return (

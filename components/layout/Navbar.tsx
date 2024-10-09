@@ -37,7 +37,7 @@ export function Navbar() {
     <header role="banner" className={cx("container", "contentPadding")}>
       <div className={cx("navbar")}>
         <Link href="/" aria-label="Home" className={cx("logo")}>
-          <img src="/icon.png" alt="" width={28} height={28} />
+          <img src="/tagstudio-website/icon.png" alt="" width={28} height={28} />
           <span>TagStudio</span>
         </Link>
 

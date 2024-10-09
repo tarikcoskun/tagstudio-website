@@ -18,7 +18,7 @@ export function Footer() {
         <nav className={cx("sections")}>
           <div className={cx("brand")}>
             <div className={cx("logo")}>
-              <img src="/icon.png" alt="" width={28} height={28} />
+              <img src="/tagstudio-website/icon.png" alt="" width={28} height={28} />
               <span>TagStudio</span>
             </div>
           </div>

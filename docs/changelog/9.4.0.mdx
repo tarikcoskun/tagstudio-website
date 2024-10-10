@@ -1,0 +1,47 @@
+---
+title: Alpha v9.4.0
+date: 2024-09-04
+---
+
+### Added
+- Copy and paste fields
+- Add multiple fields at once
+- Drag and drop files in/out of the program
+  - Files can be shared by dragging them from the thumbnail grid to other programs
+  - Files can be added to library folder by dragging them into the program
+- Manage Python virtual environment in Nix flake
+- Ability to create tag when adding tags
+- Blender preview thumbnail support
+- File deletion/trashing
+  - Added right-click option on thumbnails and preview panel to delete files
+  - Added Edit Menu option for deleting files
+  - Added <kbd>Delete</kbd> key shortcut for deleting files
+- Font preview thumbnail support
+  - Short "Aa" previews for thumbnails
+  - Full alphabet preview for the preview pane
+- Sort tags by alphabetical/color
+- File explorer action follows OS naming
+- Preview Source Engine files
+- Expanded thumbnail and preview features
+  - Add album cover art thumbnails
+  - Add audio waveform thumbnails for audio files without embedded cover art
+  - Add new default file thumbnails, both for generic and specific file types
+  - Change the unlinked file icon to better convey its meaning
+  - Add dropdown for different thumbnail sizes
+- Show File Creation and Modified dates; Restyle file path label
+
+### Fixed
+- Backslashes in f-string on file dupe widget
+- Tags not shown when none searched
+- Avoid error from eagerly grabbing data values
+- Correct behavior for tag search options
+- Load Gallery-DL sidecar files correctly
+- Correct duplicate file matching
+- GPU hardware acceleration in Nix flake
+- Suppress command prompt windows for FFmpeg in builds
+
+### Internal Changes
+- Move type constants to media classes
+- Combine open launch arguments
+- Revamp Nix flake with devenv/direnv in cb4798b
+- Remove impurity of Nix flake when used with direnv in bc38e56

@@ -1,0 +1,103 @@
+.page {
+  margin-inline: auto;
+
+  h1 {
+    margin-left: 16rem;
+  }
+
+  .posts {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    .post {
+      display: grid;
+      flex-direction: column;
+      grid-template-columns: 16rem 1fr;
+      padding-block: 2rem;
+      place-items: start;
+
+      &:not(:last-child) {
+        border-bottom: 1px solid var(--theme-outline);
+      }
+
+      header {
+        position: sticky;
+        top: 2rem;
+
+        time {
+          display: block;
+          margin-top: 0.5rem;
+        }
+      }
+
+      .body {
+        color: var(--color-gray-300);
+        font-size: var(--font-size-lg);
+
+        > :first-child {
+          margin-top: 0;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+          margin: 2.5rem 0 1.5rem;
+        }
+
+        h3 {
+          font-size: var(--font-size-xl);
+        }
+
+        p {
+          margin-bottom: 1.5rem;
+        }
+
+        a {
+          color: var(--color-blue-400);
+          text-decoration: underline;
+        }
+
+        ul, ol {
+          padding-left: 1.5rem;
+          margin-bottom: 1.5rem;
+
+          li {
+            margin-bottom: 0.75rem;
+
+            &::marker {
+              color: var(--color-gray-500);
+            }
+
+            ul, ol {
+              margin-block: 1rem;
+            }
+          }
+        }
+
+        code {
+          padding: 2px 4px;
+          border-radius: var(--rounded-sm);
+          background-color: var(--color-gray-800);
+          font-family: monospace;
+          font-size: var(--font-size-sm);
+        }
+
+        kbd {
+          padding: 2px 6px;
+          border: 1px solid var(--color-gray-700);
+          border-radius: var(--rounded-sm);
+          background-color: var(--color-gray-800);
+          font-size: var(--font-size-sm);
+          font-weight: 500;
+        }
+
+        pre {
+          padding: 1em;
+          border-radius: 5px;
+          margin-bottom: 1.5rem;
+          background-color: #f4f4f4;
+          overflow-x: auto;
+        }
+      }
+    }
+  }
+}

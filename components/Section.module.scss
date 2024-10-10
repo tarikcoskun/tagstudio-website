@@ -1,0 +1,16 @@
+@import "@/styles/media";
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  &.padding-base { padding-block: var(--section-spacing); }
+  &.padding-content { padding-block: var(--content-spacing); }
+
+  .section-header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+}

@@ -10,7 +10,7 @@ export const navbarLinks: GenericLink[] = [
   },
   {
     label: "Changelog",
-    href: "https://docs.tagstud.io/updates/changelog",
+    href: "/changelog",
   },
 ];
 
@@ -22,7 +22,7 @@ export const footerLinks: Record<string, GenericLink[]> = {
     },
     {
       label: "Changelog",
-      href: "https://docs.tagstud.io/updates/changelog",
+      href: "/changelog",
     },
   ],
   Community: [

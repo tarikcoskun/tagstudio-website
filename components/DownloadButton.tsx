@@ -33,7 +33,7 @@ export function DownloadButton() {
 
       <Dropdown.Menu>
         <Dropdown.MenuGroup>
-          {Object.entries(downloads).filter(([platform]) => platform !== os).sort((_, [b]) => b.includes(os as string) ? 1 : -1).map(([platform, properties]) => (
+          {Object.entries(downloads).filter(([platform]) => platform !== os).sort(([a], [b]) => b.includes(os as string) ? 1 : a.includes(os as string) ? -1 : 0).map(([platform, properties]) => (
             <Button
               key={platform}
               as="a"

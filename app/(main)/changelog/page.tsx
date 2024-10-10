@@ -1,6 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
-import { serialize } from "next-mdx-remote/serialize";
+import matter from "gray-matter";
 import { ChangelogPage } from "@/modules/changelog/ChangelogPage";
 
 export interface FrontMatter {
@@ -8,22 +8,26 @@ export interface FrontMatter {
   date: string;
 }
 
-export default async function ChangelogPageWrapper() {
-  const changelogsDir = path.join(process.cwd(), "docs/changelog");
-  const files = fs.readdirSync(changelogsDir);
+export interface Post {
+  frontMatter: FrontMatter;
+  content: string;
+}
 
-  const changelogs = files.map((fileName) => {
-    const filePath = path.join(changelogsDir, fileName);
+export default function ChangelogPageWrapper() {
+  const postsDir = path.join(process.cwd(), "docs/changelog");
+  const files = fs.readdirSync(postsDir);
+
+  const posts = files.map((fileName) => {
+    const filePath = path.join(postsDir, fileName);
     const fileContent = fs.readFileSync(filePath, "utf8");
     return { fileName, fileContent };
   });
 
-  const content = await Promise.all(changelogs.map(async (changelog) => {
-    return {
-      ...changelog,
-      mdxSource: await serialize<Record<string, unknown>, FrontMatter>(changelog.fileContent, { parseFrontmatter: true }),
-    };
-  }));
+  const content = posts.map((post) => {
+    const { data, content } = matter(post.fileContent);
+    const frontMatter = data as FrontMatter;
+    return { frontMatter, content };
+  });
 
   return <ChangelogPage data={content} />;
 }

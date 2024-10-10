@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import dynamic from "next/dynamic";
 
 // Data
 import { navbarLinks } from "@/config/layout";
@@ -9,14 +8,13 @@ import { navbarLinks } from "@/config/layout";
 // Components
 import Link from "next/link";
 import { Icon } from "../Icon";
+import { NavbarDownloadButton } from "./NavbarDownloadButton";
 
 // Styles
 import style from "./Navbar.module.scss";
 import classNames from "classnames/bind";
 
 const cx = classNames.bind(style);
-
-const DownloadButton = dynamic(() => import("./DownloadButton"), { ssr: false });
 
 export function Navbar() {
   const [mobileMenu, setMobileMenu] = React.useState(false);
@@ -64,7 +62,7 @@ export function Navbar() {
           </ul>
         </nav>
 
-        <DownloadButton />
+        <NavbarDownloadButton />
 
         <button
           type="button"

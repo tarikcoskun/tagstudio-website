@@ -8,7 +8,7 @@
     z-index: 50;
     top: calc(100% + 0.5rem);
     right: 0;
-    width: fit-content;
+    width: max-content;
     border: 1px solid var(--theme-outline);
     border-radius: calc(8px + 4px);
     background-color: var(--color-gray-900);

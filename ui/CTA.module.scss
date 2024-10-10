@@ -2,6 +2,7 @@
   position: relative;
   padding-block: 8rem;
 
+  // Gradient
   &::before {
     position: absolute;
     z-index: -1;
@@ -20,6 +21,7 @@
     mask-image: linear-gradient(transparent, rgb(0 0 0) 40%);
     perspective: 1000px;
 
+    // Grid pattern
     .grid {
       position: absolute;
       z-index: -1;
@@ -28,17 +30,15 @@
       height: 200%;
       background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='64' height='64' fill='none' stroke='%23ffffff10'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e");
       background-position: center bottom;
-      mask-image: linear-gradient(to right, transparent, rgb(0 0 0), transparent);
+      mask-image: linear-gradient(to right, transparent, rgb(0 0 0 / 0.75), transparent);
       transform: rotateX(65deg);
     }
   }
 
   .text-container {
     display: flex;
-    max-width: var(--content-width);
     flex-direction: column;
     align-items: center;
-    margin-inline: auto;
 
     h1 {
       font-size: var(--font-size-5xl);

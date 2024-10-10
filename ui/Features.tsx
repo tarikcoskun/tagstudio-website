@@ -1,3 +1,8 @@
+"use client";
+
+import { motion } from "framer-motion";
+import { motionContainerProps, motionItemProps } from "./motion";
+
 // Components
 import { Icon, type IconList } from "@/components/Icon";
 
@@ -43,9 +48,9 @@ const features: Feature[] = [
 
 export function Features() {
   return (
-    <section className={cx("features")}>
-      <h1>Features</h1>
-      <div className={cx("grid")}>
+    <motion.section className={cx("features")} {...motionContainerProps}>
+      <motion.h1 {...motionItemProps}>Features</motion.h1>
+      <motion.div className={cx("grid")} {...motionItemProps}>
         {features.map((feature) => (
           <div key={feature.title} className={cx("feature")}>
             <Icon lib="solar" icon={feature.icon} size={32} />
@@ -53,7 +58,7 @@ export function Features() {
             <p>{feature.description}</p>
           </div>
         ))}
-      </div>
-    </section>
+      </motion.div>
+    </motion.section>
   );
 }

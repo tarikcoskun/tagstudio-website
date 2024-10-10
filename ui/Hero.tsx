@@ -1,5 +1,8 @@
 "use client";
 
+import { motion } from "framer-motion";
+import { motionContainerProps, motionItemProps } from "./motion";
+
 // Components
 import { Button } from "@/components/Button";
 import { Github } from "@/components/Icon/standalone/Github";
@@ -14,10 +17,10 @@ const cx = classNames.bind(style);
 export function Hero() {
   return (
     <section className={cx("hero")}>
-      <div className={cx("text-container")}>
-        <h1>The file manager<br />of your dreams</h1>
-        <p>A document management system that helps you organize with advanced tagging. Designed for all your <span style={{ textDecoration: "line-through" }}>memes</span> needs.</p>
-        <div className={cx("buttons")}>
+      <motion.div className={cx("text-container")} {...motionContainerProps}>
+        <motion.h1 {...motionItemProps}>The file manager<br />of your dreams</motion.h1>
+        <motion.p {...motionItemProps}>A document management system that helps you organize with advanced tagging. Designed for all your <span style={{ textDecoration: "line-through" }}>memes</span> needs.</motion.p>
+        <motion.div {...motionItemProps} className={cx("buttons")}>
           <DownloadButton />
           <Button
             as="a"
@@ -30,8 +33,8 @@ export function Hero() {
           >
             GitHub
           </Button>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 }

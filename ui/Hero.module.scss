@@ -1,7 +1,5 @@
 .hero {
   position: relative;
-  display: flex;
-  justify-content: center;
   margin-top: calc(var(--content-nav-height) * -1);
   padding-block: 12rem;
 
@@ -16,7 +14,7 @@
     mask-image: linear-gradient(rgb(0 0 0 / 0.75), rgb(0 0 0 / 0.25), transparent);
   }
 
-  // Grid patter
+  // Grid pattern
   &::after {
     position: absolute;
     z-index: -1;

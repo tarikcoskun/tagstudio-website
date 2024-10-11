@@ -80,13 +80,13 @@ $colors: (
 .button-group {
   display: flex;
 
-  > :first-child {
+  > :first-child:not(:only-child) {
     flex-grow: 1;
     border-bottom-right-radius: 0;
     border-top-right-radius: 0;
   }
 
-  > :last-child {
+  > :last-child:not(:only-child) {
     border-left: 1px solid rgb(0 0 0 / 0.075);
     border-bottom-left-radius: 0;
     border-top-left-radius: 0;

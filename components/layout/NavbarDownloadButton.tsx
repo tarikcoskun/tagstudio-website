@@ -25,7 +25,7 @@ export function NavbarDownloadButton() {
   return (
     <Button
       as="a"
-      href={os ? downloads[os].link : ""}
+      href={os ? downloads[os].link : "https://github.com/TagStudioDev/TagStudio/releases"}
       color="surface"
       className={cx("download-button")}
       leading={OsIcon}

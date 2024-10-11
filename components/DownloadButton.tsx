@@ -4,7 +4,7 @@ import React from "react";
 import { getOs } from "@/util/getOs";
 
 // Data
-import { downloads, type Platforms } from "@/config/links";
+import { downloads, type Platforms, type SupportedPlatforms } from "@/config/links";
 
 // Components
 import { Icon } from "@/components/Icon";
@@ -13,12 +13,14 @@ import { Dropdown } from "@/components/Dropdown";
 
 export function DownloadButton() {
   const [os, setOs] = React.useState<Platforms | null>(null);
-  const OsIcon = os ? downloads[os].icon : downloads.Linux.icon;
+  const OsIcon = os ? downloads[os as SupportedPlatforms]?.icon : downloads.Linux.icon;
 
   React.useEffect(() => {
     const detectedOs = getOs();
     setOs(detectedOs);
   }, []);
+
+  if (os === "Android" || os === "iOS") return null;
 
   return (
     <Dropdown>

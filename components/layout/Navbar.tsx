@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { usePathname } from "next/navigation";
 
 // Data
 import { navbarLinks } from "@/config/layout";
@@ -13,7 +14,6 @@ import { NavbarDownloadButton } from "./NavbarDownloadButton";
 // Styles
 import style from "./Navbar.module.scss";
 import classNames from "classnames/bind";
-import { usePathname } from "next/navigation";
 
 const cx = classNames.bind(style);
 

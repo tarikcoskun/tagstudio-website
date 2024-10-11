@@ -2,7 +2,8 @@ import { Icon } from "@/components/Icon";
 import { Apple } from "@/components/Icon/standalone/Apple";
 import { Windows } from "@/components/Icon/standalone/Windows";
 
-export type Platforms = "Linux" | "Mac" | "Windows";
+export type Platforms = "Linux" | "Mac" | "Windows" | "Android" | "iOS";
+export type SupportedPlatforms = "Linux" | "Mac" | "Windows";
 
 export const downloads = {
   "Windows": {

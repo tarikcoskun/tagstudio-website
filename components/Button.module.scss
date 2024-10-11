@@ -24,8 +24,18 @@ $colors: (
   transition: background-color 150ms;
 
   &:hover { text-decoration: none; }
-  &.padding-base { padding: 10px 14px; }
-  &.padding-square { padding: 10px; }
+  &.size-sm { font-size: var(--font-size-sm); }
+  &.size-lg { font-size: var(--font-size-lg); }
+  &.padding-base {
+    &.size-sm { padding: 8px 12px; }
+    &.size-base { padding: 10px 14px; }
+    &.size-lg { padding: 12px 16px; }
+  }
+  &.padding-square {
+    &.size-sm { padding: 8px; }
+    &.size-base { padding: 10px; }
+    &.size-lg { padding: 12px; }
+  }
   &[disabled] {
     opacity: 0.375;
     pointer-events: none;

@@ -12,6 +12,7 @@ export interface ButtonProps {
   color?: "surface";
   variant?: "solid" | "soft" | "ghost" | "link";
   padding?: "base" | "square" | "none";
+  size?: "sm" | "base" | "lg";
   leading?: React.ReactNode;
   trailing?: React.ReactNode;
 }
@@ -26,6 +27,7 @@ const ButtonRoot: ButtonComponent = React.forwardRef(<C extends React.ElementTyp
     color,
     variant = "solid",
     padding = "base",
+    size = "base",
     leading,
     trailing,
     className,
@@ -38,7 +40,7 @@ const ButtonRoot: ButtonComponent = React.forwardRef(<C extends React.ElementTyp
   return (
     <Component
       type={type}
-      className={cx("button", `${variant}-${color}`, `padding-${padding}`, className)}
+      className={cx("button", `${variant}-${color}`, `padding-${padding}`, `size-${size}`, className)}
       {...buttonProps}
       ref={ref}
     >

@@ -35,7 +35,7 @@
     .post {
       display: grid;
       flex-direction: column;
-      gap: 1.5rem;
+      gap: 3rem;
       grid-template-columns: var(--grid-columns, auto);
       padding-block: 2rem;
       place-items: start;
@@ -71,6 +71,10 @@
 
         h1, h2, h3, h4, h5, h6 {
           margin: 2.5rem 0 1.5rem;
+        }
+
+        h3 {
+          font-size: var(--font-size-lg);
         }
 
         p {

@@ -10,7 +10,7 @@ const container: Variants = {
   },
 };
 
-const item: Variants = {
+const child: Variants = {
   hidden: { y: 10, opacity: 0 },
   visible: {
     y: 0,
@@ -32,7 +32,7 @@ const generic: Variants = {
   },
 };
 
-export const motionContainerProps: HTMLMotionProps<any> = {
+export const animateContainer: HTMLMotionProps<any> = {
   variants: container,
   initial: "hidden",
   whileInView: "visible",
@@ -41,11 +41,11 @@ export const motionContainerProps: HTMLMotionProps<any> = {
   },
 };
 
-export const motionItemProps: HTMLMotionProps<any> = {
-  variants: item,
+export const animateChild: HTMLMotionProps<any> = {
+  variants: child,
 };
 
-export const motionProps: HTMLMotionProps<any> = {
+export const animate: HTMLMotionProps<any> = {
   variants: generic,
   initial: "hidden",
   whileInView: "visible",

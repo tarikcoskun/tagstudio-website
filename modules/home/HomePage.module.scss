@@ -1,3 +1,4 @@
+@use "@/styles/util";
 @import "@/styles/media";
 
 .hero {
@@ -21,11 +22,11 @@
     position: absolute;
     z-index: -1;
     height: 100%;
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='48' height='48' fill='none' stroke='%23ffffff10'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e");
     background-position: center top;
     content: "";
     inset: 0;
     mask-image: linear-gradient(transparent, rgb(0 0 0 / 0.5), transparent);
+    @include util.grid-pattern(48px);
   }
 
   .text-container {
@@ -148,10 +149,10 @@
       bottom: -200px;
       width: 100%;
       height: 200%;
-      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='64' height='64' fill='none' stroke='%23ffffff10'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e");
       background-position: center bottom;
       mask-image: linear-gradient(to right, transparent, rgb(0 0 0 / 0.75), transparent);
       transform: rotateX(65deg);
+      @include util.grid-pattern(64px);
     }
   }
 

@@ -9,6 +9,7 @@ export interface FrontMatter {
 }
 
 export interface Post {
+  fileName: string;
   frontMatter: FrontMatter;
   content: string;
 }
@@ -26,7 +27,7 @@ export default function ChangelogPageWrapper() {
   const content = posts.map((post) => {
     const { data, content } = matter(post.fileContent);
     const frontMatter = data as FrontMatter;
-    return { frontMatter, content };
+    return { fileName: post.fileName.replace(".mdx", ""), frontMatter, content };
   });
 
   return <ChangelogPage data={content} />;

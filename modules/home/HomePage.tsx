@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { motionContainerProps, motionItemProps } from "./motion";
+import { animateChild, animateContainer } from "./motion";
 
 // Components
 import { Button } from "@/components/Button";
@@ -53,10 +53,10 @@ export function HomePage() {
   return (
     <main>
       <section className={cx("hero")}>
-        <motion.div className={cx("text-container")} {...motionContainerProps}>
-          <motion.h1 {...motionItemProps}>The file manager<br />of your dreams</motion.h1>
-          <motion.p {...motionItemProps}>A document management system that helps you organize with advanced tagging. Designed for all your <span style={{ textDecoration: "line-through" }}>memes</span> needs.</motion.p>
-          <motion.div {...motionItemProps} className={cx("buttons")}>
+        <motion.div className={cx("text-container")} {...animateContainer}>
+          <motion.h1 {...animateChild}>The file manager<br />of your dreams</motion.h1>
+          <motion.p {...animateChild}>A document management system that helps you organize with advanced tagging. Designed for all your <span style={{ textDecoration: "line-through" }}>memes</span> needs.</motion.p>
+          <motion.div {...animateChild} className={cx("buttons")}>
             <DownloadButton />
             <Button
               as="a"
@@ -85,9 +85,9 @@ export function HomePage() {
         </div>
       </section> */}
 
-      <motion.section className={cx("features")} {...motionContainerProps}>
-        <motion.h1 {...motionItemProps}>Features</motion.h1>
-        <motion.div className={cx("grid")} {...motionItemProps}>
+      <motion.section className={cx("features")} {...animateContainer}>
+        <motion.h1 {...animateChild}>Features</motion.h1>
+        <motion.div className={cx("grid")} {...animateChild}>
           {features.map((feature) => (
             <div key={feature.title} className={cx("feature")}>
               <Icon lib="solar" icon={feature.icon} size={32} />
@@ -102,9 +102,9 @@ export function HomePage() {
         <div className={cx("grid-container")}>
           <div className={cx("grid")} />
         </div>
-        <motion.div className={cx("text-container")} {...motionContainerProps}>
-          <motion.h1 {...motionItemProps}>Start organizing</motion.h1>
-          <motion.div className={cx("buttons")} {...motionItemProps}>
+        <motion.div className={cx("text-container")} {...animateContainer}>
+          <motion.h1 {...animateChild}>Start organizing</motion.h1>
+          <motion.div className={cx("buttons")} {...animateChild}>
             <DownloadButton />
           </motion.div>
         </motion.div>

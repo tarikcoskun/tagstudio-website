@@ -1,8 +1,29 @@
+@use "@/styles/util";
+
 .page {
+  gap: var(--page-header-content-gap);
   margin-inline: auto;
 
-  h1 {
-    margin-left: 16rem;
+  > header {
+    position: relative;
+    display: flex;
+    height: var(--page-header-height);
+    grid-column: start / end;
+
+    &::after {
+      position: absolute;
+      z-index: -1;
+      height: 100%;
+      background-position: center -1px;
+      content: "";
+      inset: 0;
+      mask-image: linear-gradient(transparent, black);
+      @include util.grid-pattern(32px);
+    }
+
+    h1 {
+      margin: auto;
+    }
   }
 
   .posts {
@@ -62,6 +83,7 @@
 
           li {
             margin-bottom: 0.75rem;
+            line-height: 1.5;
 
             &::marker {
               color: var(--color-gray-500);
@@ -77,6 +99,7 @@
           padding: 2px 4px;
           border-radius: var(--rounded-sm);
           background-color: var(--color-gray-800);
+          color: var(--theme-text-title);
           font-family: monospace;
           font-size: var(--font-size-sm);
         }
@@ -86,6 +109,7 @@
           border: 1px solid var(--color-gray-700);
           border-radius: var(--rounded-sm);
           background-color: var(--color-gray-800);
+          color: var(--theme-text-title);
           font-size: var(--font-size-sm);
           font-weight: 500;
         }

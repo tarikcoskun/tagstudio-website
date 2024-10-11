@@ -55,9 +55,9 @@ h6 {
   line-height: 1.25;
 }
 
-h1 { font-size: clamp(1.325rem, 2.5vw, var(--font-size-4xl)); font-weight: 600; }
-h2 { font-size: clamp(1.25rem, 2.25vw, var(--font-size-3xl)); }
-h3 { font-size: clamp(1.125rem, 2vw, var(--font-size-2xl)); }
+h1 { font-size: clamp(var(--font-size-4xl), 2.5vw, var(--font-size-5xl)); font-weight: 600; }
+h2 { font-size: clamp(var(--font-size-3xl), 2.25vw, var(--font-size-4xl)); }
+h3 { font-size: clamp(var(--font-size-xl), 2vw, var(--font-size-2xl)); }
 h4 { font-size: var(--font-size-xl); }
 h5 { font-size: var(--font-size-lg); }
 

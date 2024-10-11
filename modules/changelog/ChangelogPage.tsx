@@ -22,7 +22,7 @@ export function ChangelogPage({ data }: { data: Post[] }) {
         {data.sort((a, b) => new Date(b.frontMatter.date).getTime() - new Date(a.frontMatter.date).getTime()).map((post) => (
           <article key={post.frontMatter.title} className={cx("post")}>
             <header>
-              <h6>{post.frontMatter.title}</h6>
+              <h4>{post.frontMatter.title}</h4>
               <time dateTime={post.frontMatter.date}>{formatDate(post.frontMatter.date)}</time>
             </header>
 

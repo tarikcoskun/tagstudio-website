@@ -13,7 +13,7 @@ const cx = classNames.bind(style);
 
 export function Footer() {
   return (
-    <footer className={cx("container")}>
+    <footer className={cx("container", "contentPadding")}>
       <div className={cx("footer")}>
         <nav className={cx("sections")}>
           <div className={cx("brand")}>

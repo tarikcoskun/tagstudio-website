@@ -5,6 +5,9 @@
   position: relative;
   margin-top: calc(var(--content-nav-height) * -1);
   padding-block: 12rem;
+  @include media("<md") {
+    padding-block: 8rem;
+  }
 
   // Gradient
   &::before {
@@ -36,7 +39,6 @@
     text-align: center;
 
     h1 {
-      font-size: var(--font-size-6xl);
       text-shadow: 0 4px 4px rgb(0 0 0 / 0.15);
     }
 
@@ -53,6 +55,9 @@
       display: flex;
       margin-top: 2rem;
       gap: 1rem;
+      @include media("<md") {
+        flex-direction: column;
+      }
     }
   }
 }
@@ -61,7 +66,7 @@
   position: relative;
   max-width: var(--content-width);
   margin-inline: auto;
-  padding-block: 2rem;
+  padding-block: var(--section-spacing);
   text-align: center;
 
   &::before {
@@ -86,19 +91,22 @@
     .feature {
       --border: 1px solid var(--theme-outline);
       display: flex;
-      width: 33%;
       flex-direction: column;
       align-items: center;
       padding: 2.5rem;
+      @include media(">md") {
+        width: 33%;
+
+        &:not(:is(:nth-child(3), :nth-child(5))) {
+          border-right: var(--border);
+        }
+      }
       @include media("<md") {
         &:not(:last-child) {
           border-bottom: var(--border);
         }
       }
 
-      &:not(:is(:nth-child(3), :nth-child(5))) {
-        border-right: var(--border);
-      }
       &:not(:is(:nth-child(4), :nth-child(5))) {
         border-bottom: var(--border);
       }
@@ -160,10 +168,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-
-    h1 {
-      font-size: var(--font-size-5xl);
-    }
+    text-align: center;
 
     .buttons {
       display: flex;

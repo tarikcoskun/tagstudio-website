@@ -52,7 +52,7 @@ const features: Feature[] = [
 export function HomePage() {
   return (
     <main>
-      <section className={cx("hero")}>
+      <section className={cx("hero", "contentPadding")}>
         <motion.div className={cx("text-container")} {...animateContainer}>
           <motion.h1 {...animateChild}>The file manager<br />of your dreams</motion.h1>
           <motion.p {...animateChild}>A document management system that helps you organize with advanced tagging. Designed for all your <span style={{ textDecoration: "line-through" }}>memes</span> needs.</motion.p>
@@ -85,8 +85,8 @@ export function HomePage() {
         </div>
       </section> */}
 
-      <motion.section className={cx("features")} {...animateContainer}>
-        <motion.h1 {...animateChild}>Features</motion.h1>
+      <motion.section className={cx("features", "contentPadding")} {...animateContainer}>
+        <motion.h2 {...animateChild}>Features</motion.h2>
         <motion.div className={cx("grid")} {...animateChild}>
           {features.map((feature) => (
             <div key={feature.title} className={cx("feature")}>
@@ -98,7 +98,7 @@ export function HomePage() {
         </motion.div>
       </motion.section>
 
-      <section className={cx("cta")}>
+      <section className={cx("cta", "contentPadding")}>
         <div className={cx("grid-container")}>
           <div className={cx("grid")} />
         </div>

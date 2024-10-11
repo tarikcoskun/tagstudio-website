@@ -2,6 +2,6 @@
 
 .download-button {
   @include media("<md") {
-    display: none;
+    display: none !important;
   }
 }

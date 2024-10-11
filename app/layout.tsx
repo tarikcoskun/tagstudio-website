@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 
+import { MotionConfig } from "framer-motion";
+
 // Styles
 import "@/styles/globals.scss";
 import { Inter } from "next/font/google";
@@ -17,7 +19,9 @@ export default function RootLayout({ children }: React.PropsWithChildren) {
   return (
     <html lang="en" style={{ fontFamily: fontInter.style.fontFamily }}>
       <body>
-        {children}
+        <MotionConfig reducedMotion="user">
+          {children}
+        </MotionConfig>
       </body>
     </html>
   );

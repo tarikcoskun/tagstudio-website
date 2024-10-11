@@ -13,10 +13,12 @@ import { NavbarDownloadButton } from "./NavbarDownloadButton";
 // Styles
 import style from "./Navbar.module.scss";
 import classNames from "classnames/bind";
+import { usePathname } from "next/navigation";
 
 const cx = classNames.bind(style);
 
 export function Navbar() {
+  const path = usePathname();
   const [mobileMenu, setMobileMenu] = React.useState(false);
 
   React.useEffect(() => {
@@ -25,11 +27,8 @@ export function Navbar() {
   }, [mobileMenu]);
 
   React.useEffect(() => {
-    const listener = () => setMobileMenu(false);
-
-    window.addEventListener("hashchange", listener);
-    return () => window.removeEventListener("hashchange", listener);
-  }, []);
+    setMobileMenu(false);
+  }, [path]);
 
   return (
     <header role="banner" className={cx("container", "contentPadding")}>

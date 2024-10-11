@@ -17,6 +17,10 @@ export const downloads = {
     link: "https://github.com/TagStudioDev/TagStudio/releases/latest/download/tagstudio_macos_x86_64.tar.gz",
     icon: <Apple />,
   },
+  "Mac (ARM)": {
+    link: "https://github.com/TagStudioDev/TagStudio/releases/latest/download/tagstudio_macos_aarch64.tar.gz",
+    icon: <Apple />,
+  },
   "Linux": {
     link: "https://github.com/TagStudioDev/TagStudio/releases/latest/download/tagstudio_linux_x86_64.tar.gz",
     icon: <Icon lib="lucide" icon="download" />,

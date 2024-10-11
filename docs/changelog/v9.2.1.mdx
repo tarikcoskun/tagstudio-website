@@ -1,0 +1,16 @@
+---
+title: Alpha v9.2.1
+date: 2024-05-23
+---
+
+### Added
+- Basic thumbnail/preview support for RAW images (currently `.raw`, `.dng`, `.rw2`, `.nef`, `.arw`, `.crw`, `.cr3`)
+  - NOTE: These previews are currently slow to load given the nature of rendering them. In the future once thumbnail caching is added, this process should only happen once.
+- Thumbnail/preview support for HEIF images
+
+### Fixed
+- Fixed sidebar not expanding horizontally
+- Fixed "Recent Library" list not updating when creating a new library
+- Fixed palletized images not loading with alpha channels
+- Low resolution images (such as pixel art) now render with crisp edges in thumbnails and previews
+- Fixed visual bug where the edit icon would show for incorrect fields

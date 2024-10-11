@@ -1,0 +1,29 @@
+---
+title: Alpha v9.3.0
+date: 2024-06-09
+---
+
+### Added
+- Added playback previews for video files
+- Added Boolean "and/or" search mode selection
+- Added ability to scan and fix duplicate entries (not to be confused with duplicate files) from the "Fix Unlinked Entries" menu
+- Added “Select All” (<kbd>Ctrl</kbd>+<kbd>A</kbd> / <kbd>⌘ Command</kbd>+<kbd>A</kbd>) hotkey for the library grid view
+- Added "Clear Selection" hotkey (<kbd>Esc</kbd>) for the library grid view
+- Added the ability to invert the file extension inclusion list into an exclusion list
+- Added default landing page when no library is open
+
+### Fixed
+- TagStudio will no longer attempt to or allow you to reopen a library from a missing location
+- Fixed `PermissionError` when attempting to access files with a higher permission level upon scanning the library directory
+- Fixed RAW image previews sometimes not loadingand
+- Fixed most non-UTF-8 encoded text files from not being able to be previewed
+- Fixed "Refresh Directories"/"Fix Unlinked Entries" creating duplicate entries
+- Other miscellaneous fixes
+
+### Changed
+- Renamed "Subtags" to "Parent Tags" to help better describe their function
+- Increased number of tags shown by default in the "Add Tag" modal from 29 to 100
+- Documentation is now split into individual linked files and updated to include future features
+- Replaced use of `os.path` with `pathlib`
+- `.cr2` files are now included in the list of RAW image file types
+- Minimum supported macOS version raised to 12.0

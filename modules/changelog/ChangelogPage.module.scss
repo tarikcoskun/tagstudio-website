@@ -61,7 +61,9 @@
 
       .body {
         color: var(--color-gray-300);
-        font-size: var(--font-size-lg);
+        @include media(">md") {
+          font-size: var(--font-size-lg);
+        }
 
         > :first-child {
           margin-top: 0;

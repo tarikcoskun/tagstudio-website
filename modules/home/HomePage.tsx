@@ -35,12 +35,12 @@ const features: Feature[] = [
   {
     icon: "document",
     title: "Metadata",
-    description: "Add metadata to your library entries such as name, author, artist.",
+    description: "Add metadata to your library entries such as name, author, or artist.",
   },
   {
     icon: "search",
     title: "Search",
-    description: "Search for entries based on tags, file names or file types.",
+    description: "Search for entries based on tags, file names, or file types.",
   },
   {
     icon: "filter",

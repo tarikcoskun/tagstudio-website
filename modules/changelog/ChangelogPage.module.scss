@@ -116,8 +116,9 @@
         kbd {
           padding: 2px 6px;
           border: 1px solid var(--color-gray-700);
-          border-radius: var(--rounded-sm);
+          border-radius: 5px;
           background-color: var(--color-gray-800);
+          box-shadow: 0 3px 0 0 var(--color-gray-700);
           color: var(--theme-text-title);
           font-size: var(--font-size-sm);
           font-weight: 500;

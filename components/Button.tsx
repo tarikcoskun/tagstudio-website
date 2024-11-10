@@ -8,9 +8,12 @@ import classNames from "classnames/bind";
 
 const cx = classNames.bind(style);
 
+type ButtonColors = "surface";
+type ButtonVariants = "solid" | "soft" | "ghost";
+
 export interface ButtonProps {
-  color?: "surface";
-  variant?: "solid" | "soft" | "ghost" | "link";
+  color?: ButtonColors;
+  variant?: ButtonVariants;
   padding?: "base" | "square" | "none";
   size?: "sm" | "base" | "lg";
   leading?: React.ReactNode;
@@ -52,15 +55,20 @@ const ButtonRoot: ButtonComponent = React.forwardRef(<C extends React.ElementTyp
 });
 
 interface ButtonGroupProps extends React.ComponentPropsWithoutRef<"div"> {
+  color?: ButtonColors;
+  variant?: ButtonVariants;
   disabled?: boolean;
 };
 
 function ButtonGroup(props: ButtonGroupProps) {
-  const { className, disabled, children, ...groupProps } = props;
+  const { color, variant = "solid", disabled, className, children, ...groupProps } = props;
 
   return (
-    <div aria-disabled={disabled} className={cx("button-group", className)} {...groupProps}>
-      {children}
+    <div className={cx("button-group", className)} {...groupProps}>
+      {React.Children.map(children, (child) => {
+        if (!React.isValidElement(child)) return;
+        return React.cloneElement(child, { color, variant, disabled } as ButtonProps);
+      })}
     </div>
   );
 }

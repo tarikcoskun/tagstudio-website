@@ -24,13 +24,17 @@ export function DownloadButton() {
 
   return (
     <Dropdown>
-      <Button.Group>
-        <Button as="a" href={os ? downloads[os].link : "https://github.com/TagStudioDev/TagStudio/releases/latest"} color="surface" leading={OsIcon}>
+      <Button.Group color="surface">
+        <Button
+          as="a"
+          href={os ? downloads[os].link : "https://github.com/TagStudioDev/TagStudio/releases/latest"}
+          leading={OsIcon}
+        >
           Download {os ? `for ${os}` : ""}
         </Button>
         {os && (
-          <Dropdown.Trigger color="surface" padding="square" aria-label="Show more options">
-            <Icon lib="lucide" icon="chevron-down" size={16} />
+          <Dropdown.Trigger padding="square" aria-label="Show more options">
+            <Icon icon="chevron-down" size={16} />
           </Dropdown.Trigger>
         )}
       </Button.Group>

@@ -37,7 +37,7 @@ export function Footer() {
                             rel="noopener noreferrer"
                             className={cx("link")}
                           >
-                            <span>{link.label}</span> <Icon lib="lucide" icon="external-link" size={14} />
+                            <span>{link.label}</span> <Icon icon="external-link" size={14} />
                           </a>
                         )
                       : (

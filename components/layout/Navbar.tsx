@@ -69,7 +69,7 @@ export function Navbar() {
           aria-label="Toggle navigation menu"
           onClick={() => setMobileMenu((val) => !val)}
         >
-          <Icon lib="lucide" icon={mobileMenu ? "x" : "menu"} size={24} />
+          <Icon icon={mobileMenu ? "x" : "menu"} size={24} />
         </button>
       </div>
     </header>

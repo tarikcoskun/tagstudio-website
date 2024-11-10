@@ -90,7 +90,7 @@ export function HomePage() {
         <motion.div className={cx("grid")} {...animateChild}>
           {features.map((feature) => (
             <div key={feature.title} className={cx("feature")}>
-              <Icon lib="solar" icon={feature.icon} size={32} />
+              <Icon collection="solar" icon={feature.icon} size={32} />
               <h6>{feature.title}</h6>
               <p>{feature.description}</p>
             </div>

@@ -24,10 +24,10 @@ export const downloads = {
   },
   "Linux": {
     link: "https://github.com/TagStudioDev/TagStudio/releases/latest/download/tagstudio_linux_x86_64.tar.gz",
-    icon: <Icon lib="lucide" icon="download" />,
+    icon: <Icon icon="download" />,
   },
   "Linux (portable)": {
     link: "https://github.com/TagStudioDev/TagStudio/releases/latest/download/tagstudio_linux_x86_64_portable.tar.gz",
-    icon: <Icon lib="lucide" icon="download" />,
+    icon: <Icon icon="download" />,
   },
 };

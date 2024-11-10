@@ -86,6 +86,10 @@ $colors: (
     border-top-right-radius: 0;
   }
 
+  > :not(:first-child):not(:last-child):not(:only-child) {
+    border-radius: 0;
+  }
+
   > :last-child:not(:only-child) {
     border-left: 1px solid rgb(0 0 0 / 0.075);
     border-bottom-left-radius: 0;

@@ -1,0 +1,49 @@
+---
+import ButtonLink from "./ButtonLink.astro"
+
+interface Props {
+	compact?: boolean
+}
+
+const { compact = false } = Astro.props
+---
+
+<ButtonLink color="white" data-download-button>
+	<svg width={16} height={16} data-platform-icon>
+		<use href="/tagstudio-website/sprite.svg#lucide:download"></use>
+	</svg>
+
+	{compact ? "Download" : <span data-platform-label>Download</span>}
+</ButtonLink>
+
+<script>
+	import type { Platforms } from "@/constants"
+
+	import { downloads } from "@/constants"
+
+	let platform: Platforms | null = null
+	const userAgent = window.navigator.userAgent
+
+	if (userAgent.includes("Win")) platform = "Windows"
+	else if (userAgent.includes("Mac")) platform = "Mac (Apple Silicon)"
+	else if (userAgent.includes("Linux")) platform = "Linux"
+
+	const buttons = document.querySelectorAll("[data-download-button]")
+	for (const button of buttons) {
+		if (!platform) continue
+		const platformInfo = downloads[platform]
+		button.setAttribute("href", platformInfo.link)
+
+		const svg = button.querySelector("[data-platform-icon]")
+		if (!svg) continue
+		if (platform === "Windows") svg.setAttribute("height", "15.05")
+
+		const icon = svg.querySelector("use")
+		if (!icon) continue
+		icon.href.baseVal = `/tagstudio-website/sprite.svg#${platformInfo.icon}`
+
+		const label = button.querySelector("[data-platform-label]")
+		if (!label) continue
+		label.textContent = `Download for ${platform}`
+	}
+</script>

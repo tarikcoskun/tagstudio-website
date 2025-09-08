@@ -1,16 +1,39 @@
 ---
-
+import Layout from "../layouts/Layout.astro"
+import Download from "../components/Download.astro"
+import ButtonGroup from "@/components/ButtonGroup.astro"
+import Button from "@/components/Button.astro"
+import Icon from "@/components/Icon.astro"
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout>
+	<main>
+		<section
+			class="relative -mt-(--navbar-height) py-32 md:py-48"
+			class:list={[
+				"before:absolute before:inset-0 before:-z-10 before:h-[125%] before:bg-gradient-to-r before:from-fuchsia-700 before:via-blue-700 before:to-teal-700 before:mask-(--gradient-mask)",
+				"after:grid-pattern after:absolute after:inset-0 after:-z-10 after:h-full after:mask-(--grid-mask) after:bg-size-[3rem] after:bg-position-[center_top]",
+			]}
+			style={{
+				"--grid-mask": "linear-gradient(transparent, rgb(0 0 0 / 0.5), transparent)",
+				"--gradient-mask": "linear-gradient(rgb(0 0 0 / 0.75), rgb(0 0 0 / 0.25), transparent)",
+			}}
+		>
+			<div class="flex flex-col items-center text-center">
+				<h1 class="text-heading max-w-2xl text-5xl leading-tight font-semibold text-balance">
+					The file manager of your dreams
+				</h1>
+				<p class="mt-6 max-w-3xl text-balance dark:text-[#b2bac9]">
+					A document management system that helps you organize with advanced tagging. Designed for
+					all your <span class="line-through">memes</span> needs.
+				</p>
+				<ButtonGroup class="mt-8">
+					<Download />
+					<Button color="white" size="icon" data-dropdown-button>
+						<Icon icon="lucide:chevron-down" />
+					</Button>
+				</ButtonGroup>
+			</div>
+		</section>
+	</main>
+</Layout>

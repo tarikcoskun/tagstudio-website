@@ -1,0 +1,74 @@
+@import "tailwindcss";
+@import "./variables";
+@import "./typography.css" layer(components);
+
+@custom-variant dark {
+	@media (prefers-color-scheme: dark) {
+		@slot;
+	}
+}
+
+@theme {
+	--font-sans: "Inter", sans-serif;
+	--font-heading: "Bai Jamjure", var(--font-sans);
+
+	--color-surface-50: light-dark(var(--color-neutral-50), var(--color-neutral-950));
+	--color-surface-100: light-dark(var(--color-neutral-100), var(--color-neutral-900));
+	--color-surface-200: light-dark(var(--color-neutral-200), var(--color-neutral-800));
+	--color-surface-300: light-dark(var(--color-neutral-300), var(--color-neutral-700));
+	--color-surface-400: light-dark(var(--color-neutral-400), var(--color-neutral-600));
+	--color-surface-500: light-dark(var(--color-neutral-500), var(--color-neutral-500));
+	--color-surface-600: light-dark(var(--color-neutral-600), var(--color-neutral-400));
+	--color-surface-700: light-dark(var(--color-neutral-700), var(--color-neutral-300));
+	--color-surface-800: light-dark(var(--color-neutral-800), var(--color-neutral-200));
+	--color-surface-900: light-dark(var(--color-neutral-900), var(--color-neutral-100));
+	--color-surface-950: light-dark(var(--color-neutral-950), var(--color-neutral-50));
+
+	--color-background: var(--color-surface-50);
+	--color-foreground: var(--color-surface-600);
+	--color-heading: var(--color-surface-950);
+
+	--spacing-content: var(--sp-content);
+	--spacing-section: var(--sp-section);
+}
+
+:root {
+	--content-width: 72rem;
+	--navbar-height: 4rem;
+	--svg-grid-pattern: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' fill='none' stroke='%2300000010'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e");
+
+	color-scheme: light dark;
+	background-color: var(--color-background);
+	color: var(--color-foreground);
+	font-family: var(--font-sans);
+}
+
+@utility grid-pattern {
+	background-image: var(--svg-grid-pattern);
+	background-repeat: repeat;
+}
+
+@utility page-layout {
+	display: grid;
+	min-height: calc(100vh - var(--navbar-height));
+	align-content: start;
+	grid-template-columns:
+		[start]
+		1fr
+		[content-start] min(var(--content-width), 100%) [content-end]
+		1fr
+		[end];
+
+	> * {
+		grid-column: content-start / content-end;
+		@variant max-lg {
+			padding-inline: var(--spacing-content);
+		}
+	}
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--svg-grid-pattern: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' fill='none' stroke='%23ffffff10'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e");
+	}
+}

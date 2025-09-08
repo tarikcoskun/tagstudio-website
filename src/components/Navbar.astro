@@ -1,0 +1,17 @@
+---
+import Download from "./Download.astro"
+import Icon from "./Icon.astro"
+---
+
+<header class="relative z-10 h-(--navbar-height)">
+	<div class="mx-auto flex h-full w-full max-w-(--content-width) items-center justify-between">
+		<a href="/" aria-label="Home" class="flex items-center gap-x-2 text-white">
+			<Icon icon="tagstudio:logo" size={24} />
+			<div class="font-heading text-lg">
+				<span class="font-bold">Tag</span><span class="font-medium italic">Studio</span>
+			</div>
+		</a>
+
+		<Download compact />
+	</div>
+</header>

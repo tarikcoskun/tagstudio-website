@@ -1,0 +1,47 @@
+---
+import type { MarkdownInstance } from "astro"
+
+import Layout from "../layouts/Layout.astro"
+import PageHeader from "../components/PageHeader.astro"
+
+import { formatDate } from "../utils/formatDate"
+
+type Post = MarkdownInstance<{ title: string; date: string }>
+
+const posts = Object.values(import.meta.glob<Post>("../docs/changelog/*.md", { eager: true }))
+---
+
+<Layout>
+	<main class="page-layout">
+		<PageHeader>
+			<h1 class="text-heading text-5xl font-semibold">Changelog</h1>
+		</PageHeader>
+
+		<section class="flex flex-col gap-4">
+			{
+				posts
+					.sort(
+						(a, b) =>
+							new Date(b.frontmatter.date).getTime() - new Date(a.frontmatter.date).getTime(),
+					)
+					.map((post) => (
+						<article
+							class="border-surface-300 grid grid-cols-(--post-cols) place-items-start border-b py-16"
+							style={{ "--post-cols": "16rem 1fr" }}
+						>
+							<header class="sticky top-8">
+								<h2 class="text-heading">{post.frontmatter.title}</h2>
+								<time class="mt-2 block text-sm" datetime={post.frontmatter.date}>
+									{formatDate(post.frontmatter.date)}
+								</time>
+							</header>
+
+							<div class="prose">
+								<post.Content />
+							</div>
+						</article>
+					))
+			}
+		</section>
+	</main>
+</Layout>

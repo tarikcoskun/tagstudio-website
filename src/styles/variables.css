@@ -1,0 +1,29 @@
+:root {
+	/* spacings */
+	--sp-content: 1.5rem;
+	--sp-section: 2rem;
+
+	/* layout */
+	--navbar-height: 3.5rem;
+	--sidebar-width: 14rem;
+	--page-width: calc(100vw - var(--sidebar-width) - var(--spacing-content) * 2);
+
+	/* interactive elements */
+	--ia-sm: --spacing(8);
+	--ia-base: --spacing(9);
+	--ia-lg: --spacing(10);
+	--ia-xl: --spacing(11);
+	--ia-pi-sm: --spacing(3);
+	--ia-pi-base: --spacing(4);
+	--ia-pi-lg: --spacing(5);
+	--ia-pi-even-sm: --spacing(1.5);
+	--ia-pi-even-base: --spacing(2);
+	--ia-pi-even-lg: --spacing(2.5);
+}
+
+@media (width < 40rem /* sm */) {
+	:root {
+		--sp-content: 1rem;
+		--sp-section: 1.25rem;
+	}
+}

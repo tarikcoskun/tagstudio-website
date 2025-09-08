@@ -1,0 +1,12 @@
+<header
+	class="relative col-span-full flex h-(--page-header-height) flex-col items-center justify-center"
+	class:list={[
+		"after:grid-pattern after:absolute after:inset-0 after:-z-10 after:h-full after:mask-(--page-header-mask) after:bg-size-[2rem] after:bg-position-[center_-1px]",
+	]}
+	style={{
+		"--page-header-height": "calc(32px * 7)",
+		"--page-header-mask": "linear-gradient(transparent, black)",
+	}}
+>
+	<slot />
+</header>

@@ -1,0 +1,19 @@
+---
+import Navbar from "../components/Navbar.astro"
+import "../styles/main.css"
+import "@fontsource/bai-jamjuree"
+import "@fontsource-variable/dm-sans"
+---
+
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>TagStudio</title>
+		<link rel="icon" type="image/x-icon" href="/tagstudio-website/favicon.ico" />
+	</head>
+	<body>
+		<Navbar />
+		<slot />
+	</body>
+</html>

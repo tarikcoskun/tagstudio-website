@@ -1,0 +1,13 @@
+{
+	"typescript.tsdk": "./node_modules/typescript/lib",
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"files.associations": {
+		"*.css": "tailwindcss"
+	},
+
+	"[markdown]": {
+		"editor.formatOnSave": false
+	},
+
+	"tailwindCSS.classFunctions": ["cn", "tw"]
+}

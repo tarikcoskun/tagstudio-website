@@ -1,0 +1,22 @@
+---
+import type { HTMLAttributes } from "astro/types"
+import type { ButtonStyleProps } from "../shared/button-props"
+
+import { cn } from "@/utils/cn"
+import { getButtonStyles } from "../shared/button-props"
+
+export interface Props extends ButtonStyleProps, Omit<HTMLAttributes<"a">, "color"> {}
+
+const {
+	color,
+	variant = "solid",
+	size = "base",
+	padding = "base",
+	class: className,
+	...props
+} = Astro.props
+---
+
+<a {...props} class={cn(getButtonStyles({ color, variant, size, padding }), className)}>
+	<slot />
+</a>

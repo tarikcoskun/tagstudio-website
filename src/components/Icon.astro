@@ -1,0 +1,17 @@
+---
+import type { IconList } from "@/types/icon-list"
+import type { HTMLAttributes } from "astro/types"
+
+interface Props extends HTMLAttributes<"svg"> {
+	icon: IconList
+	size?: number
+	width?: number
+	height?: number
+}
+
+const { icon, size, width, height, ...props } = Astro.props
+---
+
+<svg {...props} width={size ?? width ?? 16} height={size ?? height ?? 16}>
+	<use href={`/tagstudio-website/sprite.svg#${icon}`}></use>
+</svg>
